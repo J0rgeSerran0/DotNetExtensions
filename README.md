@@ -15,9 +15,9 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 ## Extension Methods List
 
 ### **ExceptionExtensions**
-*`GetMessagesFromInnerExceptions`* - Returns an StringBuilder onject with the *Exception* object and the *InnerException* object's information when the *Exception* has one or more *InnerException* objects inside.
+**`GetMessagesFromInnerExceptions`** - Returns an *StringBuilder* object with the *Exception* object and the *InnerException* object's information when the *Exception* has one or more *InnerException* objects inside.
 
 ### **StringExtensions** 
-*`Repeat`* - Returns a character repeated a number of times.
+**`Repeat`** - Returns a character repeated a number of times.
 
 > (Note: I will continue adding more extension methods in the next days)
