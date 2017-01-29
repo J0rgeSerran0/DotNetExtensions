@@ -17,7 +17,7 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 ## Extension Methods List
 
 ### **ExceptionExtensions**
-<div style="text-align:center"><img src ="/images/bullet_green.png" /></div> ![Separator](/images/bullet_green.png) **`GetMessagesFromInnerExceptions`** - Returns an *StringBuilder* object with the *Exception* object and the *InnerException* object's information when the *Exception* has one or more *InnerException* objects inside.
+<img src ="/images/bullet_green.png" /> **`GetMessagesFromInnerExceptions`** - Returns an *StringBuilder* object with the *Exception* object and the *InnerException* object's information when the *Exception* has one or more *InnerException* objects inside.
 
 ### **StringExtensions** 
 ![Separator](/images/bullet_green.png) **`ContainsCharacters`** - Checks if some character or characters are found in a text, returning true or false.
