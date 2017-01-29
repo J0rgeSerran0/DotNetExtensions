@@ -4,10 +4,12 @@ General .NET Extensions that you can use on your projects
 ## Extension Methods
 ![C# Logo](/images/CSharp.png)
 
-> I want to share with you  some C# Extensions that I have used sometime in my projects.
-> I hope that helps.
+I want to share with you  some C# Extensions that I have used sometime in my projects.
 
-* The source code has two projects:
+I hope that helps.
+
+The source code has two projects:
+
 A project with the Extensions in C#, and a demo project to show you the use of all them.
 
 ***
