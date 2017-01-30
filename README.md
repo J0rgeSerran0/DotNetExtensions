@@ -136,5 +136,3 @@ var result = text.ContainsText("Her", StringComparison.OrdinalIgnoreCase);
 var text = '-'.Repeat(23);
 ```
 
-
-> (Note: I will continue adding more extension methods in the next days)
