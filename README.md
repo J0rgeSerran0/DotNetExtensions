@@ -16,8 +16,19 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 ## Extension Methods List
 
+### **CollectionExtensions**
+![Separator](/images/bullet_green.png) **`IsNullOrEmpty`** - Checks if a collection is null or has one or more items, returning true or false.
+
+
+### **DateTimeExtensions**
+![Separator](/images/bullet_green.png) **`CalculateAge`** - Calculates the age or the time between two dates. Returns an int value.
+
+![Separator](/images/bullet_green.png) **`CalculateAgeWithPrecision`** - Calculates the age or the time between two dates. Returns a double value.
+
+
 ### **ExceptionExtensions**
 ![Separator](/images/bullet_green.png) **`GetMessagesFromInnerExceptions`** - Returns an *StringBuilder* object with the *Exception* object and the *InnerException* object's information when the *Exception* has one or more *InnerException* objects inside.
+
 
 ### **StringExtensions** 
 ![Separator](/images/bullet_green.png) **`ContainsCharacters`** - Checks if some character or characters are found in a text, returning true or false.
