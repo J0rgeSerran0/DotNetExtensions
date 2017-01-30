@@ -19,6 +19,7 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 - [`CollectionExtensions`](#collectionextensions)
 - [`DateTimeExtensions`](#datetimeextensions)
 - [`ExceptionExtensions`](#exceptionextensions)
+- [`NumberExtensions`](#numberextensions)
 - [`StringExtensions`](#stringextensions)
 
 
@@ -31,8 +32,8 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 var data = new List<string>();
 var collectionIsNullOrEmpty = data.IsNullOrEmpty<string>();
 
-// <c>true</c> if is a null or empty collection
-// <c>false</c> in whatever other case
+// true if is a null or empty collection
+// false in whatever other case
 ```
 
 
@@ -56,6 +57,29 @@ var age = apollo11MoonDateTime.CalculateAgeWithPrecision();
 // returns a double value
 ```
 
+![Separator](/images/bullet_green.png) **`IsDate`** - Calculates if an object contains a correct DateTime for a specific culture.
+
+```csharp
+object dateTimeObject = "02/21/2017";
+var isUkValidDateTime = dateTimeObject.IsDate(new CultureInfo("en-UK");
+
+dateTimeObject = "21/02/2017";
+var isEsValidDateTime = dateTimeObject.IsDate(new CultureInfo("es-ES");
+
+// true if is a valid DateTime for the culture specified
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`IsWeekend`** - Calculates if a date is weekend or not.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var isWeekend = dateTimeNow.IsWeekend();
+
+// true if is a weekend date
+// false in whatever other case
+```
+
 
 #### `ExceptionExtensions`
 
@@ -65,6 +89,19 @@ var age = apollo11MoonDateTime.CalculateAgeWithPrecision();
 var info = ex.GetMessagesFromInnerExceptions().ToString();
 
 // ex is the Exception object
+```
+
+
+#### `NumberExtensions`
+
+![Separator](/images/bullet_green.png) **`IsPrime`** - Checks if an int number is prime number or is not a prime number.
+
+```csharp
+var number = 7;
+var isPrimeNumber = number.IsPrime();
+
+// true if is a prime number
+// false in whatever other case
 ```
 
 
@@ -78,8 +115,8 @@ char[] characters = { ',', 'H' };
 
 var result = text.ContainsCharacters(characters, StringComparison.OrdinalIgnoreCase);
 
-// <c>true</c> if some characters have been found in the text
-// <c>false</c> in whatever other cases
+// true if some characters have been found in the text
+// false in whatever other cases
 ```
 
 ![Separator](/images/bullet_green.png) **`ContainsText`** - Checks if a text pattern is found in the source text, returning true or false.
@@ -89,8 +126,8 @@ var text = "Sample.here";
 
 var result = text.ContainsText("Her", StringComparison.OrdinalIgnoreCase);
 
-// <c>true</c> if the pattern has been found in the text
-// <c>false</c> in whatever other case
+// true if the pattern has been found in the text
+// false in whatever other case
 ```
 
 ![Separator](/images/bullet_green.png) **`Repeat`** - Returns a character repeated a number of times.

@@ -2,6 +2,7 @@
 {
 
     using System;
+    using System.Globalization;
 
     public static class DateTimeExtensions
     {
@@ -34,6 +35,26 @@
         public static double CalculateAgeWithPrecision(this DateTime dateTime, DateTime? dateTimeToCompare = null)
         {
             return CommonCalculateAge(dateTime, dateTimeToCompare);
+        }
+
+        public static bool IsDate(this object element, CultureInfo culture)
+        {
+            if (element == null ||
+                            culture == null)
+            {
+                return false;
+            }
+
+            DateTime newDate;
+            var styles = DateTimeStyles.None;
+
+            return DateTime.TryParse(element.ToString(), culture, styles, out newDate);
+        }
+
+        public static bool IsWeekend(this DateTime dateTime)
+        {
+            return (dateTime.DayOfWeek == DayOfWeek.Saturday ||
+                    dateTime.DayOfWeek == DayOfWeek.Sunday);
         }
 
     }

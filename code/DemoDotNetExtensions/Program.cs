@@ -4,6 +4,7 @@
     using DotNetExtensions;
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
 
     public class Program
     {
@@ -63,6 +64,14 @@
             Console.WriteLine("CalculateAge => " + apollo11MoonDateTime.CalculateAge());
             // CalculateAgeWithPrecision
             Console.WriteLine("CalculateAgeWithPrecision => " + apollo11MoonDateTime.CalculateAgeWithPrecision());
+            // IsDate
+            object dateTimeObject = "02/21/2017";
+            Console.WriteLine($"Is valid date {dateTimeObject} for en-UK? => " + dateTimeObject.IsDate(new CultureInfo("en-UK")));
+            dateTimeObject = "21/02/2017";
+            Console.WriteLine($"Is valid date {dateTimeObject} for es-ES? => " + dateTimeObject.IsDate(new CultureInfo("es-ES")));
+            // IsWeekend
+            var dateTimeNow = DateTime.Now;
+            Console.WriteLine($"{dateTimeNow} is weekend? " + dateTimeNow.IsWeekend());
             Console.WriteLine();
 
 
@@ -84,6 +93,19 @@
                 Console.WriteLine();
             }
             // ************************************
+
+
+
+            // ************************************
+            // NumericExtensions
+            // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("NumericExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // IsPrime
+            var number = 7;
+            Console.WriteLine($"IsPrime {number} => " + number.IsPrime());
+            Console.WriteLine();
 
 
             Console.ForegroundColor = ConsoleColor.Green;
