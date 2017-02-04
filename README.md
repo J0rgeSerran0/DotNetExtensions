@@ -17,7 +17,9 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 ## List of Extension Methods
 
 - [`CollectionExtensions`](#collectionextensions)
+- [`ColorExtensions`](#colorextensions)
 - [`DateTimeExtensions`](#datetimeextensions)
+- [`EnumExtensions`](#enumextensions)
 - [`ExceptionExtensions`](#exceptionextensions)
 - [`NumberExtensions`](#numberextensions)
 - [`StringExtensions`](#stringextensions)
@@ -34,6 +36,37 @@ var collectionIsNullOrEmpty = data.IsNullOrEmpty<string>();
 
 // true if is a null or empty collection
 // false in whatever other case
+```
+
+
+#### `ColorExtensions`
+
+![Separator](/images/bullet_green.png) **`IsHexCode`** - Checks if a string with the hex code value (without the # symbol) is a valid hex code.
+
+```csharp
+var hexCode = "00FF00";
+var isValidHexCode = hexCode.IsHexCode();
+
+// true if is a valid hex code
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`ToColor`** - Convert a hex code to Color.
+
+```csharp
+var hexCode = "00FF00";
+var color = hexCode.ToColor().Value;
+
+// returns null if is nos a valid hex code or if there is any problem
+```
+
+![Separator](/images/bullet_green.png) **`ToHexCode`** - Convert a Color to a hex code.
+
+```csharp
+var color = Color.Red;
+var hexCode = color.ToHexCode();
+
+// returns the equivalent hex code for the Color
 ```
 
 
@@ -78,6 +111,46 @@ var isWeekend = dateTimeNow.IsWeekend();
 
 // true if is a weekend date
 // false in whatever other case
+```
+
+
+#### `EnumExtensions`
+
+![Separator](/images/bullet_green.png) **`IsValid`** - Determinates if a string value is found in an enum type.
+
+```csharp
+public enum DemoType
+{
+    One,
+    Two,
+    Three
+}
+
+
+var stringDemoType = "Twoo";
+var exists = stringDemoType.IsValid<DemoType>();
+
+// true if is a valid string value
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`ToEnum`** - Convert a string value in an enum type if it exists.
+
+```csharp
+public enum DemoType
+{
+    One,
+    Two,
+    Three
+}
+
+
+var demoType = DemoType.One;
+var stringDemoType = "Two";
+demoType = stringDemoType.ToEnum<DemoType>();
+
+// In this sample code, returns Two as enum value.
+// In whatever other cases, will return the first default value of the enum object.
 ```
 
 

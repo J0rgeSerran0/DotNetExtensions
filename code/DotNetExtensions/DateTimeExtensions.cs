@@ -40,7 +40,7 @@
         public static bool IsDate(this object element, CultureInfo culture)
         {
             if (element == null ||
-                            culture == null)
+                culture == null)
             {
                 return false;
             }

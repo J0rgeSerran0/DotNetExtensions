@@ -4,6 +4,7 @@
     using DotNetExtensions;
     using System;
     using System.Collections.Generic;
+    using System.Drawing;
     using System.Globalization;
 
     public class Program
@@ -50,6 +51,26 @@
             // IsNullOrEmptyAsync
             Console.WriteLine("IsNullOrEmptyAsync => " + data.IsNullOrEmptyAsync<string>().Result);
             Console.WriteLine();
+            // ************************************
+
+
+
+            // ************************************
+            // ColorExtensions
+            // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("ColorExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // IsHexCode
+            var hexCode = "00FF00";
+            Console.WriteLine($"IsHexCode {hexCode} => " + hexCode.IsHexCode());
+            // ToColor
+            Color color = hexCode.ToColor().Value;
+            Console.WriteLine("ToColor => " + color);
+            // ToHexCode
+            Console.WriteLine("ToHexCode => " + color.ToHexCode());
+            Console.WriteLine();
+            // ************************************
 
 
 
@@ -73,6 +94,34 @@
             var dateTimeNow = DateTime.Now;
             Console.WriteLine($"{dateTimeNow} is weekend? " + dateTimeNow.IsWeekend());
             Console.WriteLine();
+            // ************************************
+
+
+
+            // ************************************
+            // EnumExtensions
+            // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("EnumExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // IsValid
+            var stringDemoType = "Twoo";
+            var result = stringDemoType.IsValid<DemoType>();
+            Console.WriteLine($"IsValid => {stringDemoType} = {result}");
+            stringDemoType = "Two";
+            result = stringDemoType.IsValid<DemoType>();
+            Console.WriteLine($"IsValid => {stringDemoType} = {result}");
+            // ToEnum
+            var demoType = DemoType.One;
+            Console.WriteLine($"Original value => {demoType}");
+            stringDemoType = "Twoo";
+            demoType = stringDemoType.ToEnum<DemoType>();
+            Console.WriteLine($"ToEnum => {stringDemoType} as {demoType}");
+            stringDemoType = "Two";
+            demoType = stringDemoType.ToEnum<DemoType>();
+            Console.WriteLine($"ToEnum => {stringDemoType} as {demoType}");
+            Console.WriteLine();
+            // ************************************
 
 
 
@@ -113,6 +162,13 @@
             Console.ReadLine();
         }
 
+    }
+
+    public enum DemoType
+    {
+        One,
+        Two,
+        Three
     }
 
 }
