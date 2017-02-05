@@ -27,7 +27,7 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 
 
-#### `CollectionExtensions`
+#### ![Separator](/images/bullet_purple.png) `CollectionExtensions`
 
 ![Separator](/images/bullet_green.png) **`IsNull`** - Checks if a collection is null, returning true or false.
 
@@ -70,7 +70,7 @@ var collectionIsNullOrEmptyAsync = await data.IsNullOrEmptyAsync<string>();
 ```
 
 
-#### `ColorExtensions`
+#### ![Separator](/images/bullet_purple.png) `ColorExtensions`
 
 ![Separator](/images/bullet_green.png) **`IsHexCode`** - Checks if a string with the hex code value (without the # symbol) is a valid hex code.
 
@@ -101,7 +101,7 @@ var hexCode = color.ToHexCode();
 ```
 
 
-#### `DateTimeExtensions`
+#### ![Separator](/images/bullet_purple.png) `DateTimeExtensions`
 
 ![Separator](/images/bullet_green.png) **`CalculateAge`** - Calculates the age or the time between two dates. Returns an int value.
 
@@ -145,7 +145,7 @@ var isWeekend = dateTimeNow.IsWeekend();
 ```
 
 
-#### `EnumExtensions`
+#### ![Separator](/images/bullet_purple.png) `EnumExtensions`
 
 ![Separator](/images/bullet_green.png) **`IsValid`** - Determinates if a string value is found in an enum type.
 
@@ -185,7 +185,7 @@ demoType = stringDemoType.ToEnum<DemoType>();
 ```
 
 
-#### `ExceptionExtensions`
+#### ![Separator](/images/bullet_purple.png) `ExceptionExtensions`
 
 ![Separator](/images/bullet_green.png) **`GetMessagesFromInnerExceptions`** - Returns an *StringBuilder* object with the *Exception* object and the *InnerException* object's information when the *Exception* has one or more *InnerException* objects inside.
 
@@ -196,7 +196,7 @@ var info = ex.GetMessagesFromInnerExceptions().ToString();
 ```
 
 
-#### `NumberExtensions`
+#### ![Separator](/images/bullet_purple.png) `NumberExtensions`
 
 ![Separator](/images/bullet_green.png) **`IsPrime`** - Checks if an int number is prime number or is not a prime number.
 
@@ -209,7 +209,7 @@ var isPrimeNumber = number.IsPrime();
 ```
 
 
-#### `StringExtensions`
+#### ![Separator](/images/bullet_purple.png) `StringExtensions`
 
 ![Separator](/images/bullet_green.png) **`ContainsCharacters`** - Checks if some character or characters are found in a text, returning true or false.
 
@@ -241,7 +241,7 @@ var text = '-'.Repeat(23);
 ```
 
 
-#### `RandomExtensions`
+#### ![Separator](/images/bullet_purple.png) `RandomExtensions`
 
 ![Separator](/images/bullet_green.png) **`Shuffle`** - For integer values, generate a collection of shuffle values starting in a number with a size of numbers to calculate.
 
