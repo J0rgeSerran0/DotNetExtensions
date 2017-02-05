@@ -15,6 +15,23 @@
             return ex.InnerException == null ? stringBuilder.Append(globalPattern + ex.Message) : stringBuilder.Append(globalPattern + ex.Message + Environment.NewLine + ex.InnerException.GetMessagesFromInnerExceptions());
         }
 
+        private static T GetObject<T>(string message)
+        {
+            return (T)Activator.CreateInstance(typeof(T), message);
+        }
+
+        public static T ToException<T>(this object @object, string message = "") where T : Exception, new()
+        {
+            var exception = new T();
+
+            if (!String.IsNullOrEmpty(message))
+            {
+                exception = GetObject<T>(message);
+            }
+
+            return exception;
+        }
+
     }
 
 }

@@ -27,7 +27,7 @@
             }
             catch (Exception ex)
             {
-                Thread.Sleep(2500);
+                Thread.Sleep(1250);
                 throw new DivideByZeroException("Exception1 " + DateTime.UtcNow, ex);
             }
         }

@@ -195,6 +195,16 @@ var info = ex.GetMessagesFromInnerExceptions().ToString();
 // ex is the Exception object
 ```
 
+![Separator](/images/bullet_green.png) **`ToException`** - Generates an Exception object with the message that we want include in the object.
+
+```csharp
+var @object = new Object();
+var exception = @object.ToException<InvalidCastException>("foo exception text");
+throw exception;
+
+// ex is the Exception object
+```
+
 
 #### ![Separator](/images/ExtensionMethod.png) `NumberExtensions`
 

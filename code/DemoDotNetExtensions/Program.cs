@@ -133,19 +133,25 @@
             // ************************************
             // ExceptionExtensions
             // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("ExceptionExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // GetMessagesFromInnerExceptions
             try
             {
                 DemoExceptionExtensions.GenerateException();
             }
             catch (Exception ex)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("ExceptionExtensions");
-                Console.ForegroundColor = ConsoleColor.White;
                 var info = ex.GetMessagesFromInnerExceptions().ToString();
-                Console.WriteLine(info);
-                Console.WriteLine();
+                Console.WriteLine($"GetMessagesFromInnerExceptions => {info}");
             }
+            // ToException
+            var @object = new Object();
+            var exception = @object.ToException<InvalidCastException>("foo exception text");
+            var information = exception.GetMessagesFromInnerExceptions().ToString();
+            Console.WriteLine($"ToException => {information}");
+            Console.WriteLine();
             // ************************************
 
 
