@@ -23,16 +23,47 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 - [`ExceptionExtensions`](#exceptionextensions)
 - [`NumberExtensions`](#numberextensions)
 - [`StringExtensions`](#stringextensions)
+- [`RandomExtensions`](#randomextensions)
 
 
 
 #### `CollectionExtensions`
+
+![Separator](/images/bullet_green.png) **`IsNull`** - Checks if a collection is null, returning true or false.
+
+```csharp
+var data = null;
+var collectionIsNull = data.IsNull<string>();
+
+// true if is a null
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`IsNullAsync`** - Async method that checks if a collection is null, returning true or false.
+
+```csharp
+var data = null;
+var collectionIsNullAsync = await data.IsNullAsync<string>();
+
+// true if is a null
+// false in whatever other case
+```
 
 ![Separator](/images/bullet_green.png) **`IsNullOrEmpty`** - Checks if a collection is null or has one or more items, returning true or false.
 
 ```csharp
 var data = new List<string>();
 var collectionIsNullOrEmpty = data.IsNullOrEmpty<string>();
+
+// true if is a null or empty collection
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`IsNullOrEmptyAsync`** - Async method that checks if a collection is null or has one or more items, returning true or false.
+
+```csharp
+var data = new List<string>();
+var collectionIsNullOrEmptyAsync = await data.IsNullOrEmptyAsync<string>();
 
 // true if is a null or empty collection
 // false in whatever other case
@@ -207,5 +238,27 @@ var result = text.ContainsText("Her", StringComparison.OrdinalIgnoreCase);
 
 ```csharp
 var text = '-'.Repeat(23);
+```
+
+
+#### `RandomExtensions`
+
+![Separator](/images/bullet_green.png) **`Shuffle`** - For integer values, generate a collection of shuffle values starting in a number with a size of numbers to calculate.
+
+```csharp
+List<int> numbers = null;
+var cards = numbers.Shuffle(1, 12);
+
+// null if the values are negative or invalid
+// null if the size of numbers to calculate is 0 or negative
+```
+
+![Separator](/images/bullet_green.png) **`Shuffle`** - Shuffle a collection's items.
+
+```csharp
+var names = new List<string>() { "Paul", "Jose", "Adams", "Leticia", "Mary" };
+names.Shuffle();
+
+// null if the collection is null
 ```
 

@@ -7,6 +7,16 @@
     public static class CollectionExtensions
     {
 
+        public static bool IsNull<T>(this ICollection<T> items)
+        {
+            return items == null;
+        }
+
+        public static async Task<bool> IsNullAsync<T>(this ICollection<T> items)
+        {
+            return await Task.Run(() => items == null);
+        }
+
         public static bool IsNullOrEmpty<T>(this ICollection<T> items)
         {
             return (items == null ||

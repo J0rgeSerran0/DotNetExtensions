@@ -45,8 +45,13 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("CollectionExtensions");
             Console.ForegroundColor = ConsoleColor.White;
+            // IsNull
+            List<string> data = null;
+            Console.WriteLine("IsNull => " + data.IsNull<string>());
+            // IsNullAsync
+            Console.WriteLine("IsNullAsync => " + data.IsNullAsync<string>().Result);
             // IsNullOrEmpty
-            var data = new List<string>();
+            data = new List<string>();
             Console.WriteLine("IsNullOrEmpty => " + data.IsNullOrEmpty<string>());
             // IsNullOrEmptyAsync
             Console.WriteLine("IsNullOrEmptyAsync => " + data.IsNullOrEmptyAsync<string>().Result);
@@ -154,6 +159,37 @@
             // IsPrime
             var number = 7;
             Console.WriteLine($"IsPrime {number} => " + number.IsPrime());
+            Console.WriteLine();
+
+
+
+            // ************************************
+            // RandomExtensions
+            // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("RandomExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // Shuffle (integer values)
+            List<int> numbers = null;
+            var cards = numbers.Shuffle(1, 12);
+            if (cards != null)
+            {
+                foreach (var card in cards)
+                {
+                    Console.WriteLine($"Shuffle (int values) => {card}");
+                }
+            }
+            // Shuffle (collection items)
+            var names = new List<string>() { "Paul", "Jose", "Adams", "Leticia", "Mary" };
+            foreach (var item in names)
+            {
+                Console.WriteLine($"Shuffle (collection items) [original value] => {item}");
+            }
+            names.Shuffle();
+            foreach (var item in names)
+            {
+                Console.WriteLine($"Shuffle (collection items) [shuffle value] => {item}");
+            }
             Console.WriteLine();
 
 
