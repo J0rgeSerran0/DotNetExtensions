@@ -4,6 +4,7 @@
     using DotNetExtensions;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Drawing;
     using System.Globalization;
 
@@ -34,6 +35,12 @@
             Console.WriteLine("ContainsCharacters => " + text.ContainsCharacters(characters, StringComparison.OrdinalIgnoreCase));
             // ContainsText
             Console.WriteLine("ContainsText => " + text.ContainsText("Her", StringComparison.OrdinalIgnoreCase));
+            // CountWords
+            text = "This is a sample of seven " + Environment.NewLine + "  words";
+            Console.WriteLine($"CountWords => {text} => {text.CountWords()}");
+            // IsString
+            text = "Another text sample";
+            Console.WriteLine($"IsString => {text} => {text.IsString()}");
             Console.WriteLine();
             // ************************************
 
@@ -45,6 +52,19 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("CollectionExtensions");
             Console.ForegroundColor = ConsoleColor.White;
+            // Clone
+            var collection = new List<string>() { "One", "2", "Three" };
+            var collection2 = collection.Clone<string>();
+            collection2.Add("4");
+            foreach (var item in collection)
+            {
+                Console.WriteLine($"Clone => " + item);
+            }
+            Console.WriteLine("...");
+            foreach (var item in collection2)
+            {
+                Console.WriteLine($"Clone => " + item);
+            }
             // IsNull
             List<string> data = null;
             Console.WriteLine("IsNull => " + data.IsNull<string>());
@@ -109,6 +129,14 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("EnumExtensions");
             Console.ForegroundColor = ConsoleColor.White;
+            // GetDescriptionFromEnum
+            var demoType = DemoType.One;
+            var enumDescription = demoType.GetDescriptionFromEnum();
+            Console.WriteLine($"GetDescriptionFromEnum => {enumDescription}");
+            // GetEnumFromDescription
+            var descriptionEnumType = "TwoFoo";
+            demoType = descriptionEnumType.GetEnumFromDescription<DemoType>();
+            Console.WriteLine($"GetEnumFromDescription => {demoType}");
             // IsValid
             var stringDemoType = "Twoo";
             var result = stringDemoType.IsValid<DemoType>();
@@ -117,7 +145,6 @@
             result = stringDemoType.IsValid<DemoType>();
             Console.WriteLine($"IsValid => {stringDemoType} = {result}");
             // ToEnum
-            var demoType = DemoType.One;
             Console.WriteLine($"Original value => {demoType}");
             stringDemoType = "Twoo";
             demoType = stringDemoType.ToEnum<DemoType>();
@@ -151,6 +178,16 @@
             var exception = @object.ToException<InvalidCastException>("foo exception text");
             var information = exception.GetMessagesFromInnerExceptions().ToString();
             Console.WriteLine($"ToException => {information}");
+            // ThrowIfNull
+            @object = null;
+            try
+            {
+                @object.ThrowIfNull<object>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ThrowIfNull => {ex.GetMessagesFromInnerExceptions().ToString()}");
+            }
             Console.WriteLine();
             // ************************************
 
@@ -208,7 +245,9 @@
 
     public enum DemoType
     {
+        [Description("OneFoo")]
         One,
+        [Description("TwoFoo")]
         Two,
         Three
     }

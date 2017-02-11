@@ -1,11 +1,18 @@
 ﻿namespace DotNetExtensions
 {
 
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     public static class CollectionExtensions
     {
+
+        public static IList<T> Clone<T>(this IList<T> collection) where T : ICloneable
+        {
+            return collection.Select(item => (T)item.Clone()).ToList();
+        }
 
         public static bool IsNull<T>(this ICollection<T> items)
         {

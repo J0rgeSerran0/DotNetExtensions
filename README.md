@@ -29,6 +29,15 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 #### ![Separator](/images/ExtensionMethod.png) `CollectionExtensions`
 
+![Separator](/images/bullet_green.png) **`Clone`** - Clones a collection to avoid reference problems.
+
+```csharp
+var collection = new List<string>() { "One", "2", "Three" };
+var collection2 = collection.Clone<string>();
+collection2.Add("4");
+
+```
+
 ![Separator](/images/bullet_green.png) **`IsNull`** - Checks if a collection is null, returning true or false.
 
 ```csharp
@@ -147,6 +156,42 @@ var isWeekend = dateTimeNow.IsWeekend();
 
 #### ![Separator](/images/ExtensionMethod.png) `EnumExtensions`
 
+![Separator](/images/bullet_green.png) **`GetDescriptionFromEnum`** - Get a description from an enum value.
+
+```csharp
+public enum DemoType
+{
+    [Description("OneFoo")]
+    One,
+    [Description("TwoFoo")]
+    Two,
+    Three
+}
+
+
+var demoType = DemoType.One;
+var enumDescription = demoType.GetDescriptionFromEnum();
+
+```
+
+![Separator](/images/bullet_green.png) **`GetEnumFromDescription`** - Get an enum value from a description.
+
+```csharp
+public enum DemoType
+{
+    [Description("OneFoo")]
+    One,
+    [Description("TwoFoo")]
+    Two,
+    Three
+}
+
+
+var descriptionEnumType = "TwoFoo";
+var demoType = descriptionEnumType.GetEnumFromDescription<DemoType>();
+
+```
+
 ![Separator](/images/bullet_green.png) **`IsValid`** - Determinates if a string value is found in an enum type.
 
 ```csharp
@@ -205,6 +250,16 @@ throw exception;
 // ex is the Exception object
 ```
 
+![Separator](/images/bullet_green.png) **`ThrowIfNull`** - Generates an ArgumentNullException object if the class is null.
+
+```csharp
+var @object = new Object();
+@object.ThrowIfNull<object>();
+throw exception;
+
+// ex is the Exception object
+```
+
 
 #### ![Separator](/images/ExtensionMethod.png) `NumberExtensions`
 
@@ -237,11 +292,28 @@ var result = text.ContainsCharacters(characters, StringComparison.OrdinalIgnoreC
 
 ```csharp
 var text = "Sample.here";
-
 var result = text.ContainsText("Her", StringComparison.OrdinalIgnoreCase);
 
 // true if the pattern has been found in the text
 // false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`CountWords`** - Count the number of words in a text.
+
+```csharp
+var text = "This is a sample of seven" + Environment.NewLine + "words";
+var counter = text.CountWords();
+
+```
+
+![Separator](/images/bullet_green.png) **`IsString`** - Checks if an object is a string or not.
+
+```csharp
+var text = "Sample.here";
+var result = text.IsString();
+
+// true if the object is a string object
+// false if the object is null or is not a string object
 ```
 
 ![Separator](/images/bullet_green.png) **`Repeat`** - Returns a character repeated a number of times.

@@ -38,11 +38,26 @@
             return false;
         }
 
+        public static int CountWords(this string text)        {            if (text == null)
+            {
+                return 0;
+            }            var delimiters = new char[] { ' ', '\r', '\n' };
+
+            return text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length;
+        }        public static bool IsString(this object @object)
+        {
+            if (@object == null)
+            {
+                return false;
+            }
+
+            return @object.GetType().Equals(typeof(string));
+        }
         public static string Repeat(this char c, int count)
         {
             return new String(c, count);
         }
-
+        
     }
 
 }

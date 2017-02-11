@@ -32,6 +32,21 @@
             return exception;
         }
 
+        public static T ThrowIfNull<T>(this T @object, string paramName = "") where T : class
+        {
+            if (@object == null)
+            {
+                if (!String.IsNullOrEmpty(paramName))
+                {
+                    throw new ArgumentNullException(paramName);
+                }
+
+                throw new ArgumentNullException();
+            }
+
+            return @object;
+        }
+
     }
 
 }
