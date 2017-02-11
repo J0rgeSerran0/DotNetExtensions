@@ -29,7 +29,7 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 #### ![Separator](/images/ExtensionMethod.png) `CollectionExtensions`
 
-![Separator](/images/bullet_green.png) **`Clone`** - Clones a collection to avoid reference problems.
+![Separator](/images/bullet_green.png) **`Clone`** - Clone a collection to avoid reference problems.
 
 ```csharp
 var collection = new List<string>() { "One", "2", "Three" };
