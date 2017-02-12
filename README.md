@@ -22,9 +22,10 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 - [`EnumExtensions`](#enumextensions)
 - [`ExceptionExtensions`](#exceptionextensions)
 - [`NumberExtensions`](#numberextensions)
+- [`RandomExtensions`](#randomextensions)
+- [`SocialExtensions`](#socialextensions)
 - [`StreamExtensions`](#streamextensions)
 - [`StringExtensions`](#stringextensions)
-- [`RandomExtensions`](#randomextensions)
 
 
 
