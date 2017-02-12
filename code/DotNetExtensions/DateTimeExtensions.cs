@@ -37,6 +37,26 @@
             return CommonCalculateAge(dateTime, dateTimeToCompare);
         }
 
+        public static TimeSpan ElapsedUntilToday(this DateTime datetime)
+        {
+            return DateTime.Now - datetime;
+        }
+
+        public static TimeSpan ElapsedUtcUntilToday(this DateTime datetime)
+        {
+            return DateTime.UtcNow - datetime;
+        }
+
+        public static TimeSpan ElapsedWith(this DateTime datetime, DateTime dateTimeToCompare)
+        {
+            return dateTimeToCompare - datetime;
+        }
+
+        public static bool IsBetweenDates(this DateTime dateTimeToCheck, DateTime lowerRange, DateTime upperRange)
+        {
+            return dateTimeToCheck.Ticks >= lowerRange.Ticks && dateTimeToCheck.Ticks <= upperRange.Ticks;
+        }
+
         public static bool IsDate(this object element, CultureInfo culture)
         {
             if (element == null ||
@@ -55,6 +75,23 @@
         {
             return (dateTime.DayOfWeek == DayOfWeek.Saturday ||
                     dateTime.DayOfWeek == DayOfWeek.Sunday);
+        }
+
+        public static bool IsWorkingDay(this DateTime dateTime)
+        {
+            return !(dateTime.IsWeekend());
+        }
+
+        public static DateTime NextWorkingDay(this DateTime dateTime)
+        {
+            var nextWorkingDay = dateTime;
+
+            while (!nextWorkingDay.IsWorkingDay())
+            {
+                nextWorkingDay = nextWorkingDay.AddDays(1);
+            }
+
+            return nextWorkingDay;
         }
 
     }

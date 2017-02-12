@@ -9,6 +9,11 @@
     public static class CollectionExtensions
     {
 
+        public static void AddToFirstPosition<T>(this List<T> source, T item)
+        {
+            source.Insert(0, item);
+        }
+
         public static IList<T> Clone<T>(this IList<T> collection) where T : ICloneable
         {
             return collection.Select(item => (T)item.Clone()).ToList();

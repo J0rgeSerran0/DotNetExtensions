@@ -22,12 +22,21 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 - [`EnumExtensions`](#enumextensions)
 - [`ExceptionExtensions`](#exceptionextensions)
 - [`NumberExtensions`](#numberextensions)
+- [`StreamExtensions`](#streamextensions)
 - [`StringExtensions`](#stringextensions)
 - [`RandomExtensions`](#randomextensions)
 
 
 
 #### ![Separator](/images/ExtensionMethod.png) `CollectionExtensions`
+
+![Separator](/images/bullet_green.png) **`AddToFirstPosition`** - Adds an item to the beginning of a collection.
+
+```csharp
+var collection = new List<string>() { "One", "2", "Three" };
+collection.AddToFirstPosition("Zero");
+
+```
 
 ![Separator](/images/bullet_green.png) **`Clone`** - Clone a collection to avoid reference problems.
 
@@ -130,6 +139,44 @@ var age = apollo11MoonDateTime.CalculateAgeWithPrecision();
 // returns a double value
 ```
 
+![Separator](/images/bullet_green.png) **`ElapsedUntilToday`** - Calculates the time (TimeSpan) elapsed until today.
+
+```csharp
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var elapsedTime = apollo11MoonDateTime.ElapsedUntilToday();
+
+// you can calculate the future time too, but you will get a negative value in this case.
+```
+
+![Separator](/images/bullet_green.png) **`ElapsedUtcUntilToday`** - Calculates the time (TimeSpan) elapsed until today (utc).
+
+```csharp
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var elapsedUtcTime = apollo11MoonDateTime.ElapsedUtcUntilToday();
+
+// you can calculate the future time too, but you will get a negative value in this case.
+```
+
+![Separator](/images/bullet_green.png) **`ElapsedWith`** - Calculates the time (TimeSpan) elapsed until a date passed by parameter.
+
+```csharp
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var apollo11EarthDateTime = new DateTime(1969, 7, 24, 18, 50, 0);
+var elapsedTime = apollo11MoonDateTime.ElapsedUtcUntilToday(apollo11EarthDateTime);
+
+// you can calculate the future time too, but you will get a negative value in this case.
+```
+
+![Separator](/images/bullet_green.png) **`IsBetweenDates`** - Checks if a dateTime is between two dateTimes.
+
+```csharp
+var dateTimeToCheck = new DateTime(2017, 2, 12, 11, 23, 11);
+var isbetweenDates = dateTimeToCheck.IsBetweenDates(new DateTime(2017, 2, 12, 11, 23, 10), new DateTime(2017, 2, 17))
+
+// true if the dateTime is between the range of dateTime objects
+// false in whatever other case
+```
+
 ![Separator](/images/bullet_green.png) **`IsDate`** - Calculates if an object contains a correct DateTime for a specific culture.
 
 ```csharp
@@ -151,6 +198,24 @@ var isWeekend = dateTimeNow.IsWeekend();
 
 // true if is a weekend date
 // false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`IsWorkingDay`** - Calculates if a date is working day or not.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var isWorkingDay = dateTimeNow.IsWorkingDay();
+
+// true if is a working day
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`NextWorkingDay`** - Calculates the next working day from a date.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var nextWorkingDay = dateTimeNow.NextWorkingDay();
+
 ```
 
 
@@ -274,6 +339,26 @@ var isPrimeNumber = number.IsPrime();
 ```
 
 
+#### ![Separator](/images/ExtensionMethod.png) `StreamExtensions`
+
+![Separator](/images/bullet_green.png) **`ConvertToString`** - Converts a stream object to a string object.
+
+```csharp
+var text = stream.ConvertToString();
+
+```
+
+![Separator](/images/bullet_green.png) **`GetMD5`** - Gets the MD5 value from a stream content.
+
+```csharp
+var text = "Foo sample text";
+var stream = text.ConvertToStream();
+var md5 = stream.GetMD5();
+
+// 24643f9c4657b2d3281bdaa2e001a54c
+```
+
+
 #### ![Separator](/images/ExtensionMethod.png) `StringExtensions`
 
 ![Separator](/images/bullet_green.png) **`ContainsCharacters`** - Checks if some character or characters are found in a text, returning true or false.
@@ -298,6 +383,14 @@ var result = text.ContainsText("Her", StringComparison.OrdinalIgnoreCase);
 // false in whatever other case
 ```
 
+![Separator](/images/bullet_green.png) **`ConvertToStream`** - Converts a string to a stream object.
+
+```csharp
+var text = "Foo text";
+var stream = text.ConvertToStream();
+
+```
+
 ![Separator](/images/bullet_green.png) **`CountWords`** - Count the number of words in a text.
 
 ```csharp
@@ -320,6 +413,47 @@ var result = text.IsString();
 
 ```csharp
 var text = '-'.Repeat(23);
+```
+
+
+![Separator](/images/bullet_green.png) **`RemoveFirstCharacters`** - Remove the first characters of a string.
+
+```csharp
+var text = "Sample text";
+var result = text.RemoveFirstCharacters(7);
+
+```
+
+![Separator](/images/bullet_green.png) **`RemoveLastCharacters`** - Remove the last characters of a string.
+
+```csharp
+var text = "Sample text";
+var result = text.RemoveLastCharacters(5);
+
+```
+
+![Separator](/images/bullet_green.png) **`ReplaceDiacritics`** - Replaces the diacritics characters by their equivalent non diacritic character.
+
+```csharp
+var text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- a \\ b";
+var result = text.ReplaceDiacritics();
+
+```
+
+![Separator](/images/bullet_green.png) **`ToEmptyIfNull`** - Initializes a string object to an empty string if is null.
+
+```csharp
+var text = null;
+text = text.ToEmptyIfNull();
+
+```
+
+![Separator](/images/bullet_green.png) **`ToSlug`** - Converts a text to their slug text.
+
+```csharp
+var text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- a \\ b";
+var result = text.ToSlug();
+
 ```
 
 

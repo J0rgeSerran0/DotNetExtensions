@@ -47,6 +47,7 @@
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="NumericExtensions.cs" />
     <Compile Include="RandomExtensions.cs" />
+    <Compile Include="StreamExtensions.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="ExceptionExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

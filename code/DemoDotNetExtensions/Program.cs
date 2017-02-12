@@ -35,12 +35,31 @@
             Console.WriteLine("ContainsCharacters => " + text.ContainsCharacters(characters, StringComparison.OrdinalIgnoreCase));
             // ContainsText
             Console.WriteLine("ContainsText => " + text.ContainsText("Her", StringComparison.OrdinalIgnoreCase));
+            // ConvertToStream
+            text = "Foo text";
+            var stream = text.ConvertToStream();
+            Console.WriteLine($"ConvertToStream => {text}");
             // CountWords
             text = "This is a sample of seven " + Environment.NewLine + "  words";
             Console.WriteLine($"CountWords => {text} => {text.CountWords()}");
             // IsString
             text = "Another text sample";
             Console.WriteLine($"IsString => {text} => {text.IsString()}");
+            // RemoveFirstCharacters
+            text = "Sample text";
+            Console.WriteLine($"RemoveFirstCharacters => {text} => {text.RemoveFirstCharacters(7)}");
+            // RemoveLastCharacters
+            text = "Sample text";
+            Console.WriteLine($"RemoveLastCharacters => {text} => {text.RemoveLastCharacters(5)}");
+            // ReplaceDiacritics
+            text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- a \\ b";
+            Console.WriteLine($"ReplaceDiacritics => {text} => {text.ReplaceDiacritics()}");
+            // ToEmptyIfNull
+            text = null;
+            Console.WriteLine($"ToEmptyIfNull => {text.ToEmptyIfNull().Length} characters");
+            // ToSlug
+            text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- a \\ b";
+            Console.WriteLine($"ToSlug => {text} => {text.ToSlug()}");
             Console.WriteLine();
             // ************************************
 
@@ -52,8 +71,15 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("CollectionExtensions");
             Console.ForegroundColor = ConsoleColor.White;
-            // Clone
+            // AddToFirstPosition
             var collection = new List<string>() { "One", "2", "Three" };
+            collection.AddToFirstPosition("Zero");
+            foreach (var item in collection)
+            {
+                Console.WriteLine($"AddToFirstPosition => {item}");
+            }
+            // Clone
+            collection = new List<string>() { "One", "2", "Three" };
             var collection2 = collection.Clone<string>();
             collection2.Add("4");
             foreach (var item in collection)
@@ -110,6 +136,16 @@
             Console.WriteLine("CalculateAge => " + apollo11MoonDateTime.CalculateAge());
             // CalculateAgeWithPrecision
             Console.WriteLine("CalculateAgeWithPrecision => " + apollo11MoonDateTime.CalculateAgeWithPrecision());
+            // ElapsedUntilToday
+            Console.WriteLine($"ElapsedUntilToday => {apollo11MoonDateTime} {apollo11MoonDateTime.ElapsedUntilToday()}");
+            // ElapsedUtcUntilToday
+            Console.WriteLine($"ElapsedUtcUntilToday => {apollo11MoonDateTime} {apollo11MoonDateTime.ElapsedUtcUntilToday()}");
+            // ElapsedWith
+            var apollo11EarthDateTime = new DateTime(1969, 7, 24, 18, 50, 0);
+            Console.WriteLine($"ElapsedWith => {apollo11MoonDateTime} - {apollo11EarthDateTime} {apollo11MoonDateTime.ElapsedWith(apollo11EarthDateTime)}");
+            // IsBetweenDates
+            var dateTimeToCheck = new DateTime(2017, 2, 12, 11, 23, 11);
+            Console.WriteLine("IsBetweenDates => " + dateTimeToCheck.IsBetweenDates(new DateTime(2017, 2, 12, 11, 23, 10), new DateTime(2017, 2, 17)));
             // IsDate
             object dateTimeObject = "02/21/2017";
             Console.WriteLine($"Is valid date {dateTimeObject} for en-UK? => " + dateTimeObject.IsDate(new CultureInfo("en-UK")));
@@ -118,6 +154,12 @@
             // IsWeekend
             var dateTimeNow = DateTime.Now;
             Console.WriteLine($"{dateTimeNow} is weekend? " + dateTimeNow.IsWeekend());
+            // IsWorkingDay
+            dateTimeNow = DateTime.Now;
+            Console.WriteLine($"{dateTimeNow} is working day? " + dateTimeNow.IsWorkingDay());
+            // NextWorkingDay
+            dateTimeNow = DateTime.Now;
+            Console.WriteLine($"{dateTimeNow} is now, the next working day is " + dateTimeNow.NextWorkingDay());
             Console.WriteLine();
             // ************************************
 
@@ -233,6 +275,25 @@
             {
                 Console.WriteLine($"Shuffle (collection items) [shuffle value] => {item}");
             }
+            Console.WriteLine();
+
+
+
+            // ************************************
+            // StreamExtensions
+            // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("StreamExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // ConvertToString
+            text = "Foo text";
+            stream = text.ConvertToStream();
+            var stringFromStream = stream.ConvertToString();
+            Console.WriteLine($"ConvertToString => {text} => {stringFromStream}");
+            // GetMD5
+            text = "Foo sample text";
+            stream = text.ConvertToStream();
+            Console.WriteLine($"GetMD5 => {text} => {stream.GetMD5()}");
             Console.WriteLine();
 
 
