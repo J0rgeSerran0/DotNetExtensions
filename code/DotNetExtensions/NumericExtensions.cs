@@ -21,6 +21,16 @@
             return true;
         }
 
+        public static decimal GetPercentageOf(this decimal value, decimal percent)
+        {
+            return (decimal)(value * percent / 100);
+        }
+
+        public static decimal GetPercentageOf(this decimal value, int percent)
+        {
+            return value.GetPercentageOf(Convert.ToDecimal(percent));
+        }
+
     }
 
 }

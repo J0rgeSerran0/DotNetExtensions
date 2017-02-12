@@ -328,6 +328,19 @@ throw exception;
 
 #### ![Separator](/images/ExtensionMethod.png) `NumberExtensions`
 
+![Separator](/images/bullet_green.png) **`GetPercentageOf`** - Gets the percentage of a value.
+
+```csharp
+var value = 49;
+int percentage = 50;
+var result = Convert.ToDecimal(value).GetPercentageOf(percentage);
+
+var value = 49;
+decimal percentage = 50.0M;
+var result = Convert.ToDecimal(value).GetPercentageOf(percentage);
+
+```
+
 ![Separator](/images/bullet_green.png) **`IsPrime`** - Checks if an int number is prime number or is not a prime number.
 
 ```csharp
@@ -336,6 +349,61 @@ var isPrimeNumber = number.IsPrime();
 
 // true if is a prime number
 // false in whatever other case
+```
+
+
+#### ![Separator](/images/ExtensionMethod.png) `RandomExtensions`
+
+![Separator](/images/bullet_green.png) **`Shuffle`** - For integer values, generate a collection of shuffle values starting in a number with a size of numbers to calculate.
+
+```csharp
+List<int> numbers = null;
+var cards = numbers.Shuffle(1, 12);
+
+// null if the values are negative or invalid
+// null if the size of numbers to calculate is 0 or negative
+```
+
+![Separator](/images/bullet_green.png) **`Shuffle`** - Shuffle a collection's items.
+
+```csharp
+var names = new List<string>() { "Paul", "Jose", "Adams", "Leticia", "Mary" };
+names.Shuffle();
+
+// null if the collection is null
+```
+
+
+#### ![Separator](/images/ExtensionMethod.png) `SocialExtensions`
+
+![Separator](/images/bullet_green.png) **`IsValidEmail`** - Checks if the string is a valid email or not.
+
+```csharp
+var email = "foo@dom.co.uk";
+var isEmail = email.IsValidEmail();
+
+// true if is a valid email
+// false in the other cases
+```
+
+![Separator](/images/bullet_green.png) **`IsValidFtp`** - Checks if the string is a valid ftp address or not.
+
+```csharp
+var ftp = "ftp://foo.com";
+var isFtp = ftp.IsValidFtp();
+
+// true if is a valid ftp address
+// false in the other cases
+```
+
+![Separator](/images/bullet_green.png) **`IsValidUrl`** - Checks if the string is a valid url or not.
+
+```csharp
+var url = "http://www.google.com";
+var isUrl = url.IsValidUrl();
+
+// true if is a valid url address
+// false in the other cases
 ```
 
 
@@ -455,26 +523,3 @@ var text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- 
 var result = text.ToSlug();
 
 ```
-
-
-#### ![Separator](/images/ExtensionMethod.png) `RandomExtensions`
-
-![Separator](/images/bullet_green.png) **`Shuffle`** - For integer values, generate a collection of shuffle values starting in a number with a size of numbers to calculate.
-
-```csharp
-List<int> numbers = null;
-var cards = numbers.Shuffle(1, 12);
-
-// null if the values are negative or invalid
-// null if the size of numbers to calculate is 0 or negative
-```
-
-![Separator](/images/bullet_green.png) **`Shuffle`** - Shuffle a collection's items.
-
-```csharp
-var names = new List<string>() { "Paul", "Jose", "Adams", "Leticia", "Mary" };
-names.Shuffle();
-
-// null if the collection is null
-```
-

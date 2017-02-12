@@ -241,9 +241,16 @@
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("NumericExtensions");
             Console.ForegroundColor = ConsoleColor.White;
+            // GetPercentageOf (decimal)
+            var value = 49;
+            decimal percentage = 50.0M;
+            Console.WriteLine($"GetPercentageOf {percentage}% for {value} => {Convert.ToDecimal(value).GetPercentageOf(percentage)}");
+            // GetPercentageOf (int)
+            value = 49;
+            Console.WriteLine($"GetPercentageOf 50% for {value} => {Convert.ToDecimal(value).GetPercentageOf(50)}");
             // IsPrime
             var number = 7;
-            Console.WriteLine($"IsPrime {number} => " + number.IsPrime());
+            Console.WriteLine($"IsPrime {number} => {number.IsPrime()}");
             Console.WriteLine();
 
 
@@ -277,6 +284,24 @@
             }
             Console.WriteLine();
 
+
+
+            // ************************************
+            // SocialExtensions
+            // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("SocialExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // IsValidEmail
+            text = "foo@dom.co.uk";
+            Console.WriteLine($"IsValidEmail => {text} => {text.IsValidEmail()}");
+            // IsValidFtp
+            text = "ftp://foo.com";
+            Console.WriteLine($"IsValidFtp => {text} => {text.IsValidFtp()}");
+            // IsValidUrl
+            text = "https://www.google.com";
+            Console.WriteLine($"IsValidUrl => {text} => {text.IsValidUrl()}");
+            Console.WriteLine();
 
 
             // ************************************
