@@ -7,6 +7,8 @@
     using System.ComponentModel;
     using System.Drawing;
     using System.Globalization;
+    using System.Linq;
+    using System.Text;
 
     public class Program
     {
@@ -42,6 +44,43 @@
             // CountWords
             text = "This is a sample of seven " + Environment.NewLine + "  words";
             Console.WriteLine($"CountWords => {text} => {text.CountWords()}");
+            // IsAsPattern
+            text = "abc";
+            var pattern = "Ab*";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "abc";
+            pattern = "ab*";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "abc";
+            pattern = "a*c";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "abc";
+            pattern = "a?";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "abc";
+            pattern = "a??";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "a1c";
+            pattern = "*#?";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "a1cd";
+            pattern = "*#?";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "ABc";
+            pattern = "[A-Z][a-z][a-z]";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "Abc";
+            pattern = "[A-Z][a-z][a-z]";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "Abcd";
+            pattern = "[A-Z][a-z][a-z]";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "ABc2";
+            pattern = "[A-Z][A-Z][a-z][0-2]";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
+            text = "ABc3";
+            pattern = "[A-Z][A-Z][a-z][0-2]";
+            Console.WriteLine($"IsAsPattern => {text} ({pattern}) => {text.IsAsPattern(pattern)}");
             // IsString
             text = "Another text sample";
             Console.WriteLine($"IsString => {text} => {text.IsString()}");
@@ -54,12 +93,21 @@
             // ReplaceDiacritics
             text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- a \\ b";
             Console.WriteLine($"ReplaceDiacritics => {text} => {text.ReplaceDiacritics()}");
+            // Reverse
+            text = "elbat";
+            Console.WriteLine($"Reverse => {text} => {text.Reverse()}");
+            // StringFormatWith
+            text = "Hi {0}, I'm {1}";
+            Console.WriteLine($"StringFormatWith => {text} => {text.StringFormatWith("Peter", "Mary")}");
             // ToEmptyIfNull
             text = null;
             Console.WriteLine($"ToEmptyIfNull => {text.ToEmptyIfNull().Length} characters");
             // ToSlug
             text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- a \\ b";
             Console.WriteLine($"ToSlug => {text} => {text.ToSlug()}");
+            // TruncateWith
+            text = "This is a sample of text to be truncated";
+            Console.WriteLine($"TruncateWith => {text} => {text.TruncateWith(15)}");
             Console.WriteLine();
             // ************************************
 
@@ -91,8 +139,13 @@
             {
                 Console.WriteLine($"Clone => " + item);
             }
-            // IsNull
+            // EmptyIfNull
             List<string> data = null;
+            Console.WriteLine($"EmptyIfNull => {data == null}");
+            data = data.EmptyIfNull<string>().ToList();
+            Console.WriteLine($"EmptyIfNull => {data == null}");
+            // IsNull
+            data = null;
             Console.WriteLine("IsNull => " + data.IsNull<string>());
             // IsNullAsync
             Console.WriteLine("IsNullAsync => " + data.IsNullAsync<string>().Result);
@@ -122,6 +175,20 @@
             Console.WriteLine("ToHexCode => " + color.ToHexCode());
             Console.WriteLine();
             // ************************************
+
+
+
+            // ************************************
+            // CurrencyExtensions
+            // ************************************
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("CurrencyExtensions");
+            Console.ForegroundColor = ConsoleColor.White;
+            // ToCurrency
+            Console.OutputEncoding = Encoding.Unicode;
+            decimal value = 123.45M;
+            Console.WriteLine($"ToCurrency => {value} => {value.ToCurrency("es-ES")}");
+            Console.WriteLine();
 
 
 
@@ -242,7 +309,7 @@
             Console.WriteLine("NumericExtensions");
             Console.ForegroundColor = ConsoleColor.White;
             // GetPercentageOf (decimal)
-            var value = 49;
+            value = 49;
             decimal percentage = 50.0M;
             Console.WriteLine($"GetPercentageOf {percentage}% for {value} => {Convert.ToDecimal(value).GetPercentageOf(percentage)}");
             // GetPercentageOf (int)

@@ -6,16 +6,16 @@
     public static class NumericExtensions
     {
 
-        public static bool IsPrime(this int number)
+        public static bool IsPrime(this int value)
         {
-            if (number == 1) return false;
-            if (number == 2) return true;
+            if (value == 1) return false;
+            if (value == 2) return true;
 
-            var boundary = (int)Math.Floor(Math.Sqrt(number));
+            var boundary = (int)Math.Floor(Math.Sqrt(value));
 
             for (var i = 2; i <= boundary; ++i)
             {
-                if (number % i == 0) return false;
+                if (value % i == 0) return false;
             }
 
             return true;

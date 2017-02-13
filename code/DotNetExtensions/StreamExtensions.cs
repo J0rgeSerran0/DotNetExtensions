@@ -8,11 +8,11 @@
     public static class StreamExtensions
     {
 
-        public static string ConvertToString(this Stream content)
+        public static string ConvertToString(this Stream stream)
         {
-            content.Position = 0;
+            stream.Position = 0;
 
-            return new StreamReader(content).ReadToEnd();
+            return new StreamReader(stream).ReadToEnd();
         }
 
         public static string GetMD5(this Stream stream)

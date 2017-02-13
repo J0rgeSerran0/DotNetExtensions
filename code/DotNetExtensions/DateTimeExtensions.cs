@@ -57,9 +57,9 @@
             return dateTimeToCheck.Ticks >= lowerRange.Ticks && dateTimeToCheck.Ticks <= upperRange.Ticks;
         }
 
-        public static bool IsDate(this object element, CultureInfo culture)
+        public static bool IsDate(this object data, CultureInfo culture)
         {
-            if (element == null ||
+            if (data == null ||
                 culture == null)
             {
                 return false;
@@ -68,7 +68,7 @@
             DateTime newDate;
             var styles = DateTimeStyles.None;
 
-            return DateTime.TryParse(element.ToString(), culture, styles, out newDate);
+            return DateTime.TryParse(data.ToString(), culture, styles, out newDate);
         }
 
         public static bool IsWeekend(this DateTime dateTime)

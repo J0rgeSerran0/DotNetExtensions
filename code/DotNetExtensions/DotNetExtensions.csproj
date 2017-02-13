@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CollectionExtensions.cs" />
     <Compile Include="ColorExtensions.cs" />
+    <Compile Include="CurrencyExtensions.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="NumericExtensions.cs" />

@@ -48,6 +48,14 @@ collection2.Add("4");
 
 ```
 
+![Separator](/images/bullet_green.png) **`EmptyIfNull`** - Initializes a collection if the collection is null.
+
+```csharp
+List<string> data = null;
+data = data.EmptyIfNull<string>().ToList();
+
+```
+
 ![Separator](/images/bullet_green.png) **`IsNull`** - Checks if a collection is null, returning true or false.
 
 ```csharp
@@ -117,6 +125,17 @@ var color = Color.Red;
 var hexCode = color.ToHexCode();
 
 // returns the equivalent hex code for the Color
+```
+
+
+#### ![Separator](/images/ExtensionMethod.png) `CurrencyExtensions`
+
+![Separator](/images/bullet_green.png) **`ToCurrency`** - Converts a decimal value into a currency value.
+
+```csharp
+decimal value = 123.45;
+var currencyData = value.ToCurrency("es-ES");
+
 ```
 
 
@@ -468,6 +487,17 @@ var counter = text.CountWords();
 
 ```
 
+![Separator](/images/bullet_green.png) **`IsAsPattern`** - Checks if a string covers a pattern.
+
+```csharp
+var text = "abc";
+var pattern = "a??";
+var isAsPattern = text.IsAsPattern(pattern);
+
+// true if the string is correct
+// false in the other cases
+```
+
 ![Separator](/images/bullet_green.png) **`IsString`** - Checks if an object is a string or not.
 
 ```csharp
@@ -482,8 +512,16 @@ var result = text.IsString();
 
 ```csharp
 var text = '-'.Repeat(23);
+
 ```
 
+![Separator](/images/bullet_green.png) **`Reverse`** - Reverses the characters of a string.
+
+```csharp
+var text = "elbat";
+var reverseText = text.Reverse();
+
+```
 
 ![Separator](/images/bullet_green.png) **`RemoveFirstCharacters`** - Remove the first characters of a string.
 
@@ -509,6 +547,14 @@ var result = text.ReplaceDiacritics();
 
 ```
 
+![Separator](/images/bullet_green.png) **`StringFormatWith`** - Returns a text with parameters as String.Format action.
+
+```csharp
+var text = "Hi {0}, I'm {1}";
+var response = text.StringFormatWith("Peter", "Mary");
+
+```
+
 ![Separator](/images/bullet_green.png) **`ToEmptyIfNull`** - Initializes a string object to an empty string if is null.
 
 ```csharp
@@ -524,3 +570,13 @@ var text = "Hí I'm Mr O'Cônnor áéíóú äëïöü ñ àèìòù & other -- 
 var result = text.ToSlug();
 
 ```
+
+![Separator](/images/bullet_green.png) **`TruncateWith`** - Truncates a text with a maximum length of characters.
+
+```csharp
+var text = "This is a sample of text to be truncated";
+var result = text.TruncateWith(15);
+
+// This is a sampl...
+```
+

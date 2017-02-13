@@ -21,20 +21,20 @@
             return Enumerable.Range(lowerNumber, size).OrderBy(n => random.Next());
         }
 
-        public static void Shuffle<T>(this IList<T> list)
+        public static void Shuffle<T>(this IList<T> collection)
         {
-            if (list != null)
+            if (collection != null)
             {
                 var random = new Random();
-                var count = list.Count;
+                var count = collection.Count;
 
                 for (var i = 0; i < count; i++)
                 {
                     var randomValue = random.Next(i, count);
 
-                    var temp = list[i];
-                    list[i] = list[randomValue];
-                    list[randomValue] = temp;
+                    var temp = collection[i];
+                    collection[i] = collection[randomValue];
+                    collection[randomValue] = temp;
                 }
             }
         }
