@@ -37,6 +37,11 @@
             return CommonCalculateAge(dateTime, dateTimeToCompare);
         }
 
+        public static TimeSpan Days(this int days)
+        {
+            return TimeSpan.FromDays(days);
+        }
+
         public static TimeSpan ElapsedUntilToday(this DateTime datetime)
         {
             return DateTime.Now - datetime;
@@ -50,6 +55,11 @@
         public static TimeSpan ElapsedWith(this DateTime datetime, DateTime dateTimeToCompare)
         {
             return dateTimeToCompare - datetime;
+        }
+
+        public static TimeSpan Hours(this int hours)
+        {
+            return TimeSpan.FromHours(hours);
         }
 
         public static bool IsBetweenDates(this DateTime dateTimeToCheck, DateTime lowerRange, DateTime upperRange)
@@ -82,6 +92,11 @@
             return !(dateTime.IsWeekend());
         }
 
+        public static TimeSpan Minutes(this int minutes)
+        {
+            return TimeSpan.FromMinutes(minutes);
+        }
+
         public static DateTime NextWorkingDay(this DateTime dateTime)
         {
             var nextWorkingDay = dateTime;
@@ -92,6 +107,11 @@
             }
 
             return nextWorkingDay;
+        }
+
+        public static TimeSpan Seconds(this int seconds)
+        {
+            return TimeSpan.FromSeconds(seconds);
         }
 
     }

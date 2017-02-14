@@ -154,6 +154,11 @@
             Console.WriteLine("IsNullOrEmpty => " + data.IsNullOrEmpty<string>());
             // IsNullOrEmptyAsync
             Console.WriteLine("IsNullOrEmptyAsync => " + data.IsNullOrEmptyAsync<string>().Result);
+            // ToStringWithDelimiter
+            var personCollection = new List<PersonModel>() { new PersonModel() { Age = 23, Name = "Mary" }, new PersonModel() { Age = 34, Name = "Peter" } };
+            Console.WriteLine($"JoinWithDelimiter => {personCollection.JoinWithDelimiter<PersonModel>((x => $"{x.Name} is {x.Age} years old"))}");
+            data = new List<string>() { "One", "2", "Three", "4", "Five" };
+            Console.WriteLine($"JoinWithDelimiter => {data.JoinWithDelimiter<string>(x => x)}");
             Console.WriteLine();
             // ************************************
 
@@ -203,6 +208,10 @@
             Console.WriteLine("CalculateAge => " + apollo11MoonDateTime.CalculateAge());
             // CalculateAgeWithPrecision
             Console.WriteLine("CalculateAgeWithPrecision => " + apollo11MoonDateTime.CalculateAgeWithPrecision());
+            // Days
+            var dateTimeToCalculate = DateTime.Now;
+            var dateTimeCalculated = dateTimeToCalculate.Add(1.Days());
+            Console.WriteLine($"Days => {dateTimeToCalculate} => {dateTimeCalculated}");
             // ElapsedUntilToday
             Console.WriteLine($"ElapsedUntilToday => {apollo11MoonDateTime} {apollo11MoonDateTime.ElapsedUntilToday()}");
             // ElapsedUtcUntilToday
@@ -210,6 +219,10 @@
             // ElapsedWith
             var apollo11EarthDateTime = new DateTime(1969, 7, 24, 18, 50, 0);
             Console.WriteLine($"ElapsedWith => {apollo11MoonDateTime} - {apollo11EarthDateTime} {apollo11MoonDateTime.ElapsedWith(apollo11EarthDateTime)}");
+            // Hours
+            dateTimeToCalculate = DateTime.Now;
+            dateTimeCalculated = dateTimeToCalculate.Add(23.Hours());
+            Console.WriteLine($"Hours => {dateTimeToCalculate} => {dateTimeCalculated}");
             // IsBetweenDates
             var dateTimeToCheck = new DateTime(2017, 2, 12, 11, 23, 11);
             Console.WriteLine("IsBetweenDates => " + dateTimeToCheck.IsBetweenDates(new DateTime(2017, 2, 12, 11, 23, 10), new DateTime(2017, 2, 17)));
@@ -224,9 +237,21 @@
             // IsWorkingDay
             dateTimeNow = DateTime.Now;
             Console.WriteLine($"{dateTimeNow} is working day? " + dateTimeNow.IsWorkingDay());
+            // Minutes
+            dateTimeToCalculate = DateTime.Now;
+            dateTimeCalculated = dateTimeToCalculate.Add(17.Minutes());
+            Console.WriteLine($"Minutes => {dateTimeToCalculate} => {dateTimeCalculated}");
             // NextWorkingDay
             dateTimeNow = DateTime.Now;
             Console.WriteLine($"{dateTimeNow} is now, the next working day is " + dateTimeNow.NextWorkingDay());
+            // Seconds
+            dateTimeToCalculate = DateTime.Now;
+            dateTimeCalculated = dateTimeToCalculate.Add(43.Seconds());
+            Console.WriteLine($"Seconds => {dateTimeToCalculate} => {dateTimeCalculated}");
+            // Days, Hours, Minutes, Seconds
+            dateTimeToCalculate = DateTime.Now;
+            dateTimeCalculated = dateTimeToCalculate.Add(3.Days() + 1.Hours() + 20.Minutes() + 30.Seconds());
+            Console.WriteLine($"Days, Hours, Minutes, Seconds => {dateTimeToCalculate} => {dateTimeCalculated}");
             Console.WriteLine();
             // ************************************
 
@@ -318,6 +343,40 @@
             // IsPrime
             var number = 7;
             Console.WriteLine($"IsPrime {number} => {number.IsPrime()}");
+            // ToByte
+            text = "123";
+            byte valByte = text.ToByte();
+            Console.WriteLine($"ToByte {text} => {valByte}");
+            // ToDecimal
+            decimal valDecimal = text.ToDecimal() * 1.2M;
+            Console.WriteLine($"ToDecimal {text} => {valDecimal}");
+            // ToDouble
+            double valDouble = text.ToDouble() * 1.2;
+            Console.WriteLine($"ToDouble {text} => {valDouble}");
+            // ToFloat
+            float valFloat = text.ToFloat() * 1.2F;
+            Console.WriteLine($"ToFloat {text} => {valFloat}");
+            // ToInt32
+            int valInt32 = text.ToInt32() * 2.ToInt32();
+            Console.WriteLine($"ToInt32 {text} => {valInt32}");
+            // ToInt64
+            long valInt64 = text.ToInt64() * "2".ToInt64();
+            Console.WriteLine($"ToInt64 {text} => {valInt64}");
+            // ToSByte
+            sbyte valSByte = text.ToSByte();
+            Console.WriteLine($"ToSByte {text} => {valSByte}");
+            // ToShort
+            short valShort = text.ToShort();
+            Console.WriteLine($"ToShort {text} => {valShort}");
+            // ToUInt
+            uint valUInt = text.ToUInt() * "2".ToUInt();
+            Console.WriteLine($"ToUInt {text} => {valUInt}");
+            // ToULong
+            ulong valULong = text.ToULong() * 2.ToULong();
+            Console.WriteLine($"ToULong {text} => {valULong}");
+            // ToUShort
+            ushort valUShort = text.ToUShort();
+            Console.WriteLine($"ToUShort {text} => {valUShort}");
             Console.WriteLine();
 
 

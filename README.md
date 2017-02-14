@@ -18,10 +18,11 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 - [`CollectionExtensions`](#collectionextensions)
 - [`ColorExtensions`](#colorextensions)
+- [`CurrencyExtensions`](#currencyextensions)
 - [`DateTimeExtensions`](#datetimeextensions)
 - [`EnumExtensions`](#enumextensions)
 - [`ExceptionExtensions`](#exceptionextensions)
-- [`NumberExtensions`](#numberextensions)
+- [`NumericExtensions`](#numericextensions)
 - [`RandomExtensions`](#randomextensions)
 - [`SocialExtensions`](#socialextensions)
 - [`StreamExtensions`](#streamextensions)
@@ -53,6 +54,25 @@ collection2.Add("4");
 ```csharp
 List<string> data = null;
 data = data.EmptyIfNull<string>().ToList();
+
+```
+
+![Separator](/images/bullet_green.png) **`JoinWithDelimiter`** - Joins the data of a collection with a delimiter between its data.
+
+```csharp
+public class PersonModel
+{
+    public string Name { get; set; }
+    public byte Age { get; set; }
+}
+
+// With the fields of a model
+var personCollection = new List<PersonModel>() { new PersonModel() { Age = 23, Name = "Mary" }, new PersonModel() { Age = 34, Name = "Peter" } };
+var result = personCollection.JoinWithDelimiter<PersonModel>((x => $"{x.Name} is {x.Age} years old"));
+
+// With a string collection
+var data = new List<string>() { "One", "2", "Three", "4", "Five" };
+var result = data.JoinWithDelimiter<string>(x => x);
 
 ```
 
@@ -96,6 +116,14 @@ var collectionIsNullOrEmptyAsync = await data.IsNullOrEmptyAsync<string>();
 // false in whatever other case
 ```
 
+![Separator](/images/bullet_green.png) **`ToStringWithDelimiter`** - Transforms a collection in a string with all fields delimited by a delimiter that can be a character or a string.
+
+```csharp
+var data = new List<string>() { "One", "2", "Three", "4", "Five" };
+var info = data.ToStringWithDelimiter<string>();
+
+```
+
 
 #### ![Separator](/images/ExtensionMethod.png) `ColorExtensions`
 
@@ -136,6 +164,7 @@ var hexCode = color.ToHexCode();
 decimal value = 123.45;
 var currencyData = value.ToCurrency("es-ES");
 
+// returns 123,45 €
 ```
 
 
@@ -157,6 +186,17 @@ var apollo11MoonDateTime = new DateTime(1969, 7, 20);
 var age = apollo11MoonDateTime.CalculateAgeWithPrecision();
 
 // returns a double value
+```
+
+![Separator](/images/bullet_green.png) **`Days`** - Similar function to the AddDays, adds some days to a DateTime.
+
+```csharp
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(1.Days());
+
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(3.Days() + 1.Hours() + 20.Minutes() + 30.Seconds());
+
 ```
 
 ![Separator](/images/bullet_green.png) **`ElapsedUntilToday`** - Calculates the time (TimeSpan) elapsed until today.
@@ -185,6 +225,17 @@ var apollo11EarthDateTime = new DateTime(1969, 7, 24, 18, 50, 0);
 var elapsedTime = apollo11MoonDateTime.ElapsedUtcUntilToday(apollo11EarthDateTime);
 
 // you can calculate the future time too, but you will get a negative value in this case.
+```
+
+![Separator](/images/bullet_green.png) **`Hours`** - Similar function to the AddHous, adds some hours to a DateTime.
+
+```csharp
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(7.Hours());
+
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(3.Days() + 1.Hours() + 20.Minutes() + 30.Seconds());
+
 ```
 
 ![Separator](/images/bullet_green.png) **`IsBetweenDates`** - Checks if a dateTime is between two dateTimes.
@@ -230,11 +281,33 @@ var isWorkingDay = dateTimeNow.IsWorkingDay();
 // false in whatever other case
 ```
 
+![Separator](/images/bullet_green.png) **`Minutes`** - Similar function to the AddMinutes, adds some minutes to a DateTime.
+
+```csharp
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(10.Minutes());
+
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(3.Days() + 1.Hours() + 20.Minutes() + 30.Seconds());
+
+```
+
 ![Separator](/images/bullet_green.png) **`NextWorkingDay`** - Calculates the next working day from a date.
 
 ```csharp
 var dateTimeNow = DateTime.Now;
 var nextWorkingDay = dateTimeNow.NextWorkingDay();
+
+```
+
+![Separator](/images/bullet_green.png) **`Seconds`** - Similar function to the AddSeconds, adds some seconds to a DateTime.
+
+```csharp
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(1.Seconds());
+
+var apollo11MoonDateTime = new DateTime(1969, 7, 20);
+var dateTimeCalculated = apollo11MoonDateTime.Add(3.Days() + 1.Hours() + 20.Minutes() + 30.Seconds());
 
 ```
 
@@ -346,7 +419,7 @@ throw exception;
 ```
 
 
-#### ![Separator](/images/ExtensionMethod.png) `NumberExtensions`
+#### ![Separator](/images/ExtensionMethod.png) `NumericExtensions`
 
 ![Separator](/images/bullet_green.png) **`GetPercentageOf`** - Gets the percentage of a value.
 
@@ -369,6 +442,127 @@ var isPrimeNumber = number.IsPrime();
 
 // true if is a prime number
 // false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`ToByte`** - Converts an object into a Byte value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToByte();
+
+var value = 123;
+var valueConverted = value.ToByte(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToDecimal`** - Converts an object into a Decimal value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToDecimal();
+
+var value = 123;
+var valueConverted = value.ToDecimal(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToDouble`** - Converts an object into a Double value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToDouble();
+
+var value = 123;
+var valueConverted = value.ToDouble(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToFloat`** - Converts an object into a Float value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToFloat();
+
+var value = 123;
+var valueConverted = value.ToFloat(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToInt32`** - Converts an object into a Int value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToInt32();
+
+var value = 123;
+var valueConverted = value.ToInt32(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToInt64`** - Converts an object into a Long value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToInt64();
+
+var value = 123;
+var valueConverted = value.ToInt64(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToSByte`** - Converts an object into a SByte value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToSByte();
+
+var value = 123;
+var valueConverted = value.ToSByte(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToShort`** - Converts an object into a Short value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToShort();
+
+var value = 123;
+var valueConverted = value.ToShort(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToUInt`** - Converts an object into a UInt value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToUInt();
+
+var value = 123;
+var valueConverted = value.ToUInt(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToULong`** - Converts an object into a ULong value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToULong();
+
+var value = 123;
+var valueConverted = value.ToULong(1);
+
+```
+
+![Separator](/images/bullet_green.png) **`ToUShort`** - Converts an object into a UShort value if is possible.
+
+```csharp
+var value = 123;
+var valueConverted = value.ToUShort();
+
+var value = 123;
+var valueConverted = value.ToUShort(1);
+
 ```
 
 

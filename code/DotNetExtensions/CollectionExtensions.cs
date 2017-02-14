@@ -4,6 +4,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text;
     using System.Threading.Tasks;
 
     public static class CollectionExtensions
@@ -22,6 +23,11 @@
         public static IEnumerable<T> EmptyIfNull<T>(this ICollection<T> collection)
         {
             return collection ?? Enumerable.Empty<T>();
+        }
+
+        public static string JoinWithDelimiter<T>(this IEnumerable<T> collection, Func<T, string> func, string delimiter = ";")
+        {
+            return String.Join(delimiter, collection.Select(func).ToArray());
         }
 
         public static bool IsNull<T>(this ICollection<T> collection)
