@@ -5,15 +5,10 @@ General .NET Extensions that you can use on your projects
 ![C# Logo](/images/CSharp.png)
 
 
-I want to share with you  some C# Extensions that I have used sometime in my projects.
-
+<p>I want to share with you  some C# Extensions that I have used sometime in my projects.
 I hope that helps.
-
 The source code has two projects:
-
-A project with the Extensions in C#, and a demo project to show you the use of all them.
-
-<p>Then an HTML tag with crazy **markup**!</p>
+A project with the Extensions in C#, and a demo project to show you the use of all them.</p>
 
 
 
