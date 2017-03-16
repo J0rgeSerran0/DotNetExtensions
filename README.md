@@ -30,7 +30,7 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 
 
-# ![Separator](/images/ExtensionMethod.png) `CollectionExtensions`
+### ![Separator](/images/ExtensionMethod.png) `CollectionExtensions`
 
 ![Separator](/images/bullet_green.png) **`AddToFirstPosition`** - Adds an item to the beginning of a collection.
 
@@ -125,7 +125,7 @@ var info = data.ToStringWithDelimiter<string>();
 ```
 
 
-## ![Separator](/images/ExtensionMethod.png) `ColorExtensions`
+![Separator](/images/ExtensionMethod.png) ### `ColorExtensions`
 
 ![Separator](/images/bullet_green.png) **`IsHexCode`** - Checks if a string with the hex code value (without the # symbol) is a valid hex code.
 
