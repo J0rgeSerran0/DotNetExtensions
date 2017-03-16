@@ -30,7 +30,7 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 
 
-#### ![Separator](/images/ExtensionMethod.png) `CollectionExtensions`
+### ![Separator](/images/ExtensionMethod.png) `CollectionExtensions`
 
 ![Separator](/images/bullet_green.png) **`AddToFirstPosition`** - Adds an item to the beginning of a collection.
 
@@ -125,7 +125,7 @@ var info = data.ToStringWithDelimiter<string>();
 ```
 
 
-#### ![Separator](/images/ExtensionMethod.png) `ColorExtensions`
+### ![Separator](/images/ExtensionMethod.png) `ColorExtensions`
 
 ![Separator](/images/bullet_green.png) **`IsHexCode`** - Checks if a string with the hex code value (without the # symbol) is a valid hex code.
 
@@ -156,7 +156,7 @@ var hexCode = color.ToHexCode();
 ```
 
 
-#### ![Separator](/images/ExtensionMethod.png) `CurrencyExtensions`
+### ![Separator](/images/ExtensionMethod.png) `CurrencyExtensions`
 
 ![Separator](/images/bullet_green.png) **`ToCurrency`** - Converts a decimal value into a currency value.
 
@@ -168,7 +168,7 @@ var currencyData = value.ToCurrency("es-ES");
 ```
 
 
-#### ![Separator](/images/ExtensionMethod.png) `DateTimeExtensions`
+### ![Separator](/images/ExtensionMethod.png) `DateTimeExtensions`
 
 ![Separator](/images/bullet_green.png) **`CalculateAge`** - Calculates the age or the time between two dates. Returns an int value.
 
@@ -312,7 +312,7 @@ var dateTimeCalculated = apollo11MoonDateTime.Add(3.Days() + 1.Hours() + 20.Minu
 ```
 
 
-#### ![Separator](/images/ExtensionMethod.png) `EnumExtensions`
+### ![Separator](/images/ExtensionMethod.png) `EnumExtensions`
 
 ![Separator](/images/bullet_green.png) **`GetDescriptionFromEnum`** - Get a description from an enum value.
 
@@ -566,7 +566,7 @@ var valueConverted = value.ToUShort(1);
 ```
 
 
-#### ![Separator](/images/ExtensionMethod.png) `RandomExtensions`
+### ![Separator](/images/ExtensionMethod.png) `RandomExtensions`
 
 ![Separator](/images/bullet_green.png) **`Shuffle`** - For integer values, generate a collection of shuffle values starting in a number with a size of numbers to calculate.
 
@@ -641,7 +641,7 @@ var md5 = stream.GetMD5();
 ```
 
 
-#### ![Separator](/images/ExtensionMethod.png) `StringExtensions`
+### ![Separator](/images/ExtensionMethod.png) `StringExtensions`
 
 ![Separator](/images/bullet_green.png) **`ContainsCharacters`** - Checks if some character or characters are found in a text, returning true or false.
 
