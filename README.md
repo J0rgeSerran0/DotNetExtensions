@@ -125,7 +125,7 @@ var info = data.ToStringWithDelimiter<string>();
 ```
 
 
-#### ![](/images/ExtensionMethod.png) `ColorExtensions`
+#### [![](/images/ExtensionMethod.png)] `ColorExtensions`
 
 ![Separator](/images/bullet_green.png) **`IsHexCode`** - Checks if a string with the hex code value (without the # symbol) is a valid hex code.
 
