@@ -13,6 +13,8 @@ The source code has two projects:
 
 A project with the Extensions in C#, and a demo project to show you the use of all them.
 
+<p>Then an HTML tag with crazy **markup**!</p>
+
 
 
 ## List of Extension Methods
