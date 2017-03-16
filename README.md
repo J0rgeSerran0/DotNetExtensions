@@ -16,8 +16,8 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 ## List of Extension Methods
 
-- [`CollectionExtensions`](#collectionextensions)
-- [`ColorExtensions`](#colorextensions)
+- [x] [`CollectionExtensions`](#collectionextensions)
+- [x] [`ColorExtensions`](#colorextensions)
 - [`CurrencyExtensions`](#currencyextensions)
 - [`DateTimeExtensions`](#datetimeextensions)
 - [`EnumExtensions`](#enumextensions)
