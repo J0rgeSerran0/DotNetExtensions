@@ -18,15 +18,15 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 - [x] [`CollectionExtensions`](#collectionextensions)
 - [x] [`ColorExtensions`](#colorextensions)
-- [`CurrencyExtensions`](#currencyextensions)
-- [`DateTimeExtensions`](#datetimeextensions)
-- [`EnumExtensions`](#enumextensions)
-- [`ExceptionExtensions`](#exceptionextensions)
-- [`NumericExtensions`](#numericextensions)
-- [`RandomExtensions`](#randomextensions)
-- [`SocialExtensions`](#socialextensions)
-- [`StreamExtensions`](#streamextensions)
-- [`StringExtensions`](#stringextensions)
+- [x] [`CurrencyExtensions`](#currencyextensions)
+- [x] [`DateTimeExtensions`](#datetimeextensions)
+- [x] [`EnumExtensions`](#enumextensions)
+- [x] [`ExceptionExtensions`](#exceptionextensions)
+- [x] [`NumericExtensions`](#numericextensions)
+- [x] [`RandomExtensions`](#randomextensions)
+- [x] [`SocialExtensions`](#socialextensions)
+- [x] [`StreamExtensions`](#streamextensions)
+- [x] [`StringExtensions`](#stringextensions)
 
 
 
