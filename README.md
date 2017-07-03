@@ -31,7 +31,7 @@ A project with the Extensions in C#, and a demo project to show you the use of a
 
 
 
-### `CollectionExtensions`
+### `CollectionExtensions` (9)
 
 ![Separator](/images/bullet_green.png) **`AddToFirstPosition`** - Adds an item to the beginning of a collection.
 
@@ -127,7 +127,7 @@ var info = data.ToStringWithDelimiter<string>();
 
 
 
-### `ColorExtensions`
+### `ColorExtensions` (3)
 
 ![Separator](/images/bullet_green.png) **`IsHexCode`** - Checks if a string with the hex code value (without the # symbol) is a valid hex code.
 
@@ -159,7 +159,7 @@ var hexCode = color.ToHexCode();
 
 
 
-### `CurrencyExtensions`
+### `CurrencyExtensions` (1)
 
 ![Separator](/images/bullet_green.png) **`ToCurrency`** - Converts a decimal value into a currency value.
 
@@ -172,7 +172,7 @@ var currencyData = value.ToCurrency("es-ES");
 
 
 
-### `DateTimeExtensions`
+### `DateTimeExtensions` (14)
 
 ![Separator](/images/bullet_green.png) **`CalculateAge`** - Calculates the age or the time between two dates. Returns an int value.
 
@@ -317,7 +317,7 @@ var dateTimeCalculated = apollo11MoonDateTime.Add(3.Days() + 1.Hours() + 20.Minu
 
 
 
-### `EnumExtensions`
+### `EnumExtensions` (4)
 
 ![Separator](/images/bullet_green.png) **`GetDescriptionFromEnum`** - Get a description from an enum value.
 
@@ -394,7 +394,7 @@ demoType = stringDemoType.ToEnum<DemoType>();
 
 
 
-### `ExceptionExtensions`
+### `ExceptionExtensions` (3)
 
 ![Separator](/images/bullet_green.png) **`GetMessagesFromInnerExceptions`** - Returns an *StringBuilder* object with the *Exception* object and the *InnerException* object's information when the *Exception* has one or more *InnerException* objects inside.
 
@@ -426,7 +426,7 @@ throw exception;
 
 
 
-### `NumericExtensions`
+### `NumericExtensions` (13)
 
 ![Separator](/images/bullet_green.png) **`GetPercentageOf`** - Gets the percentage of a value.
 
@@ -574,7 +574,7 @@ var valueConverted = value.ToUShort(1);
 
 
 
-### `RandomExtensions`
+### `RandomExtensions` (2)
 
 ![Separator](/images/bullet_green.png) **`Shuffle`** - For integer values, generate a collection of shuffle values starting in a number with a size of numbers to calculate.
 
@@ -597,7 +597,7 @@ names.Shuffle();
 
 
 
-### `SocialExtensions`
+### `SocialExtensions` (3)
 
 ![Separator](/images/bullet_green.png) **`IsValidEmail`** - Checks if the string is a valid email or not.
 
@@ -631,7 +631,7 @@ var isUrl = url.IsValidUrl();
 
 
 
-### `StreamExtensions`
+### `StreamExtensions` (2)
 
 ![Separator](/images/bullet_green.png) **`ConvertToString`** - Converts a stream object to a string object.
 
@@ -652,7 +652,7 @@ var md5 = stream.GetMD5();
 
 
 
-### `StringExtensions`
+### `StringExtensions` (15)
 
 ![Separator](/images/bullet_green.png) **`ContainsCharacters`** - Checks if some character or characters are found in a text, returning true or false.
 
