@@ -42,7 +42,7 @@
             var stream = text.ConvertToStream();
             Console.WriteLine($"ConvertToStream => {text}");
             // CountWords
-            text = "This is a sample of seven " + Environment.NewLine + "  words";
+            text = "This is a sample of seven. " + Environment.NewLine + "  words";
             Console.WriteLine($"CountWords => {text} => {text.CountWords()}");
             // IsAsPattern
             text = "abc";
@@ -219,6 +219,12 @@
             // ElapsedWith
             var apollo11EarthDateTime = new DateTime(1969, 7, 24, 18, 50, 0);
             Console.WriteLine($"ElapsedWith => {apollo11MoonDateTime} - {apollo11EarthDateTime} {apollo11MoonDateTime.ElapsedWith(apollo11EarthDateTime)}");
+            // GetDateWithCurrentTime
+            var dateTime = new DateTime(2017, 2, 12);
+            Console.WriteLine($"GetDateWithCurrentTime {dateTime} => " + dateTime.GetDateWithCurrentTime());
+            // GetDateWithCurrentUtcTime
+            dateTime = new DateTime(2017, 2, 12);
+            Console.WriteLine($"GetDateWithCurrentUtcTime {dateTime} => " + dateTime.GetDateWithCurrentUtcTime());
             // Hours
             dateTimeToCalculate = DateTime.Now;
             dateTimeCalculated = dateTimeToCalculate.Add(23.Hours());
@@ -231,19 +237,28 @@
             Console.WriteLine($"Is valid date {dateTimeObject} for en-UK? => " + dateTimeObject.IsDate(new CultureInfo("en-UK")));
             dateTimeObject = "21/02/2017";
             Console.WriteLine($"Is valid date {dateTimeObject} for es-ES? => " + dateTimeObject.IsDate(new CultureInfo("es-ES")));
-            // IsWeekend
+            // IsLastDayOfMonth
             var dateTimeNow = DateTime.Now;
-            Console.WriteLine($"{dateTimeNow} is weekend? " + dateTimeNow.IsWeekend());
+            Console.WriteLine($"IsLastDayOfMonth {dateTimeNow} is last day of month? => " + dateTimeNow.IsLastDayOfMonth());
+            // IsLeapYear
+            dateTimeNow = DateTime.Now;
+            Console.WriteLine($"IsLeapYear {dateTimeNow} is leap year? " + dateTimeNow.IsLeapYear());
+            // IsWeekend
+            dateTimeNow = DateTime.Now;
+            Console.WriteLine($"IsWeekend {dateTimeNow} is weekend? " + dateTimeNow.IsWeekend());
             // IsWorkingDay
             dateTimeNow = DateTime.Now;
-            Console.WriteLine($"{dateTimeNow} is working day? " + dateTimeNow.IsWorkingDay());
+            Console.WriteLine($"IsWorkingDay {dateTimeNow} is working day? " + dateTimeNow.IsWorkingDay());
+            // LastDayOfMonth
+            dateTimeNow = DateTime.Now;
+            Console.WriteLine($"LastDayOfMonth {dateTimeNow} last day of month => " + dateTimeNow.LastDayOfMonth());
             // Minutes
             dateTimeToCalculate = DateTime.Now;
             dateTimeCalculated = dateTimeToCalculate.Add(17.Minutes());
             Console.WriteLine($"Minutes => {dateTimeToCalculate} => {dateTimeCalculated}");
             // NextWorkingDay
             dateTimeNow = DateTime.Now;
-            Console.WriteLine($"{dateTimeNow} is now, the next working day is " + dateTimeNow.NextWorkingDay());
+            Console.WriteLine($"NextWorkingDay {dateTimeNow} is now, the next working day is " + dateTimeNow.NextWorkingDay());
             // Seconds
             dateTimeToCalculate = DateTime.Now;
             dateTimeCalculated = dateTimeToCalculate.Add(43.Seconds());
@@ -252,6 +267,12 @@
             dateTimeToCalculate = DateTime.Now;
             dateTimeCalculated = dateTimeToCalculate.Add(3.Days() + 1.Hours() + 20.Minutes() + 30.Seconds());
             Console.WriteLine($"Days, Hours, Minutes, Seconds => {dateTimeToCalculate} => {dateTimeCalculated}");
+            // ToJavaScriptDate
+            dateTimeNow = DateTime.Now;
+            Console.WriteLine($"ToJavaScriptDate {dateTimeNow} => " + dateTimeNow.ToJavaScriptDate());
+            // ToUnixTimeStamp
+            dateTimeNow = DateTime.Now;
+            Console.WriteLine($"ToUnixTimeStamp {dateTimeNow} => " + dateTimeNow.ToUnixTimeStamp());
             Console.WriteLine();
             // ************************************
 
@@ -340,8 +361,14 @@
             // GetPercentageOf (int)
             value = 49;
             Console.WriteLine($"GetPercentageOf 50% for {value} => {Convert.ToDecimal(value).GetPercentageOf(50)}");
-            // IsPrime
+            // IsEven
             var number = 7;
+            Console.WriteLine($"IsEven {number} => {number.IsEven()}");
+            // IsOdd
+            number = 7;
+            Console.WriteLine($"IsOdd {number} => {number.IsOdd()}");
+            // IsPrime
+            number = 7;
             Console.WriteLine($"IsPrime {number} => {number.IsPrime()}");
             // ToByte
             text = "123";

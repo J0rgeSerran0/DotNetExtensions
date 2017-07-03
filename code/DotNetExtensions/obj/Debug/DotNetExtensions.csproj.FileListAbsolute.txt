@@ -1,0 +1,5 @@
+C:\Github\DotNetExtensions\code\DotNetExtensions\bin\Debug\DotNetExtensions.dll
+C:\Github\DotNetExtensions\code\DotNetExtensions\bin\Debug\DotNetExtensions.pdb
+C:\Github\DotNetExtensions\code\DotNetExtensions\obj\Debug\DotNetExtensions.csprojResolveAssemblyReference.cache
+C:\Github\DotNetExtensions\code\DotNetExtensions\obj\Debug\DotNetExtensions.dll
+C:\Github\DotNetExtensions\code\DotNetExtensions\obj\Debug\DotNetExtensions.pdb

@@ -57,6 +57,26 @@
             return dateTimeToCompare - datetime;
         }
 
+        public static DateTime GetDateWithCurrentTime(this DateTime date)
+        {
+            return new DateTime(date.Year,
+                                date.Month,
+                                date.Day,
+                                DateTime.Now.Hour,
+                                DateTime.Now.Minute,
+                                DateTime.Now.Second);
+        }
+
+        public static DateTime GetDateWithCurrentUtcTime(this DateTime date)
+        {
+            return new DateTime(date.Year,
+                                date.Month,
+                                date.Day,
+                                DateTime.UtcNow.Hour,
+                                DateTime.UtcNow.Minute,
+                                DateTime.UtcNow.Second);
+        }
+
         public static TimeSpan Hours(this int hours)
         {
             return TimeSpan.FromHours(hours);
@@ -81,6 +101,18 @@
             return DateTime.TryParse(data.ToString(), culture, styles, out newDate);
         }
 
+        public static bool IsLastDayOfMonth(this DateTime date)
+        {
+            return date.LastDayOfMonth().Day == date.Day;
+        }
+
+        public static bool IsLeapYear(this DateTime dateTime)
+        {
+            return dateTime.Year % 4 == 0 &&
+                  (dateTime.Year % 100 != 0 ||
+                   dateTime.Year % 400 == 0);
+        }
+
         public static bool IsWeekend(this DateTime dateTime)
         {
             return (dateTime.DayOfWeek == DayOfWeek.Saturday ||
@@ -90,6 +122,12 @@
         public static bool IsWorkingDay(this DateTime dateTime)
         {
             return !(dateTime.IsWeekend());
+        }
+
+        public static DateTime LastDayOfMonth(this DateTime date)
+        {
+            return new DateTime((date.Month == 12 ? date.Year + 1 : date.Year),
+                                (date.Month == 12 ? 1 : date.Month + 1), 1).AddDays(-1);
         }
 
         public static TimeSpan Minutes(this int minutes)
@@ -112,6 +150,16 @@
         public static TimeSpan Seconds(this int seconds)
         {
             return TimeSpan.FromSeconds(seconds);
+        }
+
+        public static double ToJavaScriptDate(this DateTime dateTime)
+        {
+            return new TimeSpan(dateTime.ToUniversalTime().Ticks - new DateTime(1970, 1, 1).Ticks).TotalMilliseconds;
+        }
+
+        public static long ToUnixTimeStamp(this DateTime date)
+        {
+            return (long)(date - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds;
         }
 
     }

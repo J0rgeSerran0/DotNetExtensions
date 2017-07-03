@@ -1,4 +1,4 @@
-# DotNetExtensions
+﻿# DotNetExtensions
 General .NET Extensions that you can use on your projects
 
 ## ![](/images/ExtensionMethod.png) Extension Methods
@@ -231,6 +231,22 @@ var elapsedTime = apollo11MoonDateTime.ElapsedUtcUntilToday(apollo11EarthDateTim
 // you can calculate the future time too, but you will get a negative value in this case.
 ```
 
+![Separator](/images/bullet_green.png) **`GetDateWithCurrentTime`** - Get the date with the current time.
+
+```csharp
+var dateTime = new DateTime(2017, 2, 12);
+var elapsedTime = dateTime.GetDateWithCurrentTime();
+
+```
+
+![Separator](/images/bullet_green.png) **`GetDateWithCurrentUtcTime`** - Get the date with the current Utc time.
+
+```csharp
+var dateTime = new DateTime(2017, 2, 12);
+var elapsedTime = dateTime.GetDateWithCurrentUtcTime();
+
+```
+
 ![Separator](/images/bullet_green.png) **`Hours`** - Similar function to the AddHous, adds some hours to a DateTime.
 
 ```csharp
@@ -265,6 +281,26 @@ var isEsValidDateTime = dateTimeObject.IsDate(new CultureInfo("es-ES");
 // false in whatever other case
 ```
 
+![Separator](/images/bullet_green.png) **`IsLastDayOfMonth`** - Calculates if a date is the last day of the month or not.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var isLastDayOfMonth = dateTimeNow.IsLastDayOfMonth();
+
+// true if is the last day of the month
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`IsLeapYear`** - Calculates if a date is a leap year or not.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var isLeapYear = dateTimeNow.IsLeapYear();
+
+// true if is a weekend date
+// false in whatever other case
+```
+
 ![Separator](/images/bullet_green.png) **`IsWeekend`** - Calculates if a date is weekend or not.
 
 ```csharp
@@ -283,6 +319,14 @@ var isWorkingDay = dateTimeNow.IsWorkingDay();
 
 // true if is a working day
 // false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`LastDayOfMonth`** - Calculates the last day of the month.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var lastDayOfMonth = dateTimeNow.LastDayOfMonth();
+
 ```
 
 ![Separator](/images/bullet_green.png) **`Minutes`** - Similar function to the AddMinutes, adds some minutes to a DateTime.
@@ -312,6 +356,22 @@ var dateTimeCalculated = apollo11MoonDateTime.Add(1.Seconds());
 
 var apollo11MoonDateTime = new DateTime(1969, 7, 20);
 var dateTimeCalculated = apollo11MoonDateTime.Add(3.Days() + 1.Hours() + 20.Minutes() + 30.Seconds());
+
+```
+
+![Separator](/images/bullet_green.png) **`ToJavaScriptDate`** - Calculates the date as JavaScript date.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var javaScriptDate = dateTimeNow.ToJavaScriptDate();
+
+```
+
+![Separator](/images/bullet_green.png) **`ToUnixTimeStamp`** - Calculates the date to a Unix date.
+
+```csharp
+var dateTimeNow = DateTime.Now;
+var unixTimeStamp = dateTimeNow.ToUnixTimeStamp();
 
 ```
 
@@ -439,6 +499,26 @@ var value = 49;
 decimal percentage = 50.0M;
 var result = Convert.ToDecimal(value).GetPercentageOf(percentage);
 
+```
+
+![Separator](/images/bullet_green.png) **`IsEven`** - Checks if an int number is an even number or not.
+
+```csharp
+var number = 7;
+var isEvenNumber = number.IsEven();
+
+// true if is a even number
+// false in whatever other case
+```
+
+![Separator](/images/bullet_green.png) **`IsOdd`** - Checks if an int number is an odd number or not.
+
+```csharp
+var number = 7;
+var isOddNumber = number.IsOdd();
+
+// true if is a odd number
+// false in whatever other case
 ```
 
 ![Separator](/images/bullet_green.png) **`IsPrime`** - Checks if an int number is prime number or is not a prime number.

@@ -1,0 +1,8 @@
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\bin\Debug\DemoDotNetExtensions.exe.config
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\bin\Debug\DemoDotNetExtensions.exe
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\bin\Debug\DemoDotNetExtensions.pdb
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\bin\Debug\DotNetExtensions.dll
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\bin\Debug\DotNetExtensions.pdb
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\obj\Debug\DemoDotNetExtensions.csprojResolveAssemblyReference.cache
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\obj\Debug\DemoDotNetExtensions.exe
+C:\Github\DotNetExtensions\code\DemoDotNetExtensions\obj\Debug\DemoDotNetExtensions.pdb

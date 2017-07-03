@@ -16,6 +16,16 @@
             return value.GetPercentageOf(Convert.ToDecimal(percent));
         }
 
+        public static bool IsEven(this int number)
+        {
+            return number % 2 == 0;
+        }
+
+        public static bool IsOdd(this int number)
+        {
+            return number % 2 != 0;
+        }
+
         public static bool IsPrime(this int value)
         {
             if (value == 1) return false;
