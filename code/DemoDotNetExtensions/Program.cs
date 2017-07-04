@@ -361,7 +361,7 @@
             // GetPercentageOf (int)
             value = 49;
             Console.WriteLine($"GetPercentageOf 50% for {value} => {Convert.ToDecimal(value).GetPercentageOf(50)}");
-            // IsEven
+            // IsEven 
             var number = 7;
             Console.WriteLine($"IsEven {number} => {number.IsEven()}");
             // IsOdd

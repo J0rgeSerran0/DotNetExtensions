@@ -4,7 +4,7 @@
     using System;
     using System.Globalization;
 
-    public static class CurrencyExtensions
+    public static class CurrencyExtensions 
     {
 
         public static string ToCurrency(this decimal value, string cultureName)

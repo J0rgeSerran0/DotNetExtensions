@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class CollectionExtensions
+    public static class CollectionExtensions 
     {
 
         public static void AddToFirstPosition<T>(this List<T> collection, T item)

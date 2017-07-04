@@ -4,7 +4,7 @@
     using System;
     using System.ComponentModel;
 
-    public static class EnumExtensions
+    public static class EnumExtensions 
     {
 
         public static string GetDescriptionFromEnum(this Enum value)

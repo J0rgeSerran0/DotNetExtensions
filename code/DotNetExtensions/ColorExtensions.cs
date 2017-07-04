@@ -5,7 +5,7 @@
     using System.Drawing;
     using System.Globalization;
 
-    public static class ColorExtensions
+    public static class ColorExtensions 
     {
 
         private static string ToHexCode(byte r, byte g, byte b)

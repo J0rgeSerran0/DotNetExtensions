@@ -4,7 +4,7 @@
     using System;
     using System.Text;
 
-    public static class ExceptionExtensions
+    public static class ExceptionExtensions 
     {
 
         public static StringBuilder GetMessagesFromInnerExceptions(this Exception ex)

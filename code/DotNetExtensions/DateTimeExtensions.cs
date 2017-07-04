@@ -4,7 +4,7 @@
     using System;
     using System.Globalization;
 
-    public static class DateTimeExtensions
+    public static class DateTimeExtensions 
     {
 
         private static double CommonCalculateAge(DateTime dateTime, DateTime? dateTimeToCompare)

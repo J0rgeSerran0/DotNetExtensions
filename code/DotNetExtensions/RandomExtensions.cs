@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public static class RandomExtensions
+    public static class RandomExtensions 
     {
 
         public static IEnumerable<int> Shuffle(this IList<int> content, int lowerNumber, int size)

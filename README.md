@@ -508,7 +508,7 @@ var number = 7;
 var isEvenNumber = number.IsEven();
 
 // true if is a even number
-// false in whatever other case
+// false in whatever other case 
 ```
 
 ![Separator](/images/bullet_green.png) **`IsOdd`** - Checks if an int number is an odd number or not.
